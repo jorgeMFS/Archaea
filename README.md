@@ -1,8 +1,11 @@
-# Archaea
-Archaea Taxonomic Classification
+<p align="center">
+<img src="img/archaea.png" alt="Panther" width="200" border="0" /></p>
+<br>
+<p align="center">
+</p>
 
 ## INSTALL
-Get PANThER project using:
+Get Archaea project using:
 ```bash
 git clone https://github.com/jorgeMFS/Archaea.git
 chmod +x run.sh
