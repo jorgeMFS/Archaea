@@ -1,5 +1,5 @@
 <p align="center">
-<img src="img/archaea.png" alt="Panther" width="200" border="0" /></p>
+<img src="img/archaea.png" alt="Panther" width="400" border="0" /></p>
 <br>
 <p align="center">
 </p>
