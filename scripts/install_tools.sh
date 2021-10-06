@@ -22,3 +22,8 @@ pip install pandas
 pip install numpy
 pip install sklearn
 pip install xgboost
+
+
+Check_Installation "gto";
+Check_Installation "GeCo3";
+Check_Installation "efetch";
