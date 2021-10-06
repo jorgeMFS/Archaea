@@ -15,6 +15,6 @@ ADD . /Archaea
 
 WORKDIR /Archaea
 
-RUN ./run.sh
+RUN bash run.sh
 
 CMD tail -f >> /dev/null
