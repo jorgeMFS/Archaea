@@ -88,8 +88,8 @@ DATASET_DIR="../NCBI-Archaea/ncbi_dataset"
 rm ../NCBI-Archaea/README.md > /dev/null
 if [ -d "$DATASET_DIR" ]; then rm -Rf $DATASET_DIR; fi
 unzip "../NCBI-Archaea/archaea.zip" -d ../NCBI-Archaea/
-# REMOVE_HEADERS
+REMOVE_HEADERS
 GenomeInfo "A"
 SEQ_FEATURES REPORTS_SEQ_FEATURES
-python3.6 python_src/create_classification_dataset.py
-python3.6 python_src/classification.py
+python3.6 ../python_src/create_classification_dataset.py
+python3.6 ../python_src/classification.py
