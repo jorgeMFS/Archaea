@@ -12,8 +12,18 @@ chmod +x run.sh
 bash run.sh 
 ```
 
+## Using Docker
+
+```sh
+git clone https://github.com/jorgeMFS/Archaea.git
+cd Archaea
+docker-compose build
+docker-compose up -d && docker exec -it archaea bash && docker-compose down
+```
+
 
 ## Requirements
 - Ubunto 18.0 or higher
 - Python3.6
 - Anaconda
+- or docker and docker-compose
