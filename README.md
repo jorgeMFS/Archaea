@@ -21,6 +21,11 @@ docker-compose build
 docker-compose up -d && docker exec -it archaea bash && docker-compose down
 ```
 
+## Run Scripts
+```bash
+cd scripts || exit
+bash prepare_and_classify_dataset.sh
+```
 
 ## Requirements
 - Ubunto 18.0 or higher

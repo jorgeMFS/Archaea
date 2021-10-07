@@ -1,12 +1,11 @@
 #!/bin/bash
+
 REMOVE_HEADERS(){
     mkdir -p ../NCBI-Archaea/noheader/
-    # mkdir -p ../NCBI-Archaea/HHV/noheader/
     for directory in  ../NCBI-Archaea/ncbi_dataset/data/*; do
         if [ -d "${directory}" ]; then
             dir=$(basename -- "${directory}")
             for file in "${directory}""/"*".fna"; do
-                # file_name="${file##*/}";
                 head -n 1 "$file" > HEADER;
                 tail -n +2 "$file" > FASTA
                 if grep -q "N" FASTA; then
