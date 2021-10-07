@@ -1,4 +1,7 @@
 # Ignore everything in this directory
 README.md
+ncbi_dataset
+ncbi_dataset/*
+noheader
 # Except this file
 !.gitignore

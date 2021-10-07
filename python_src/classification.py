@@ -15,6 +15,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 import openpyxl
+import warnings
+warnings.filterwarnings("ignore")
 
 def read_dat_dict_file(read_file):
 
@@ -55,9 +57,7 @@ def xgboost_classification(data, labels, taxa, variables, iterations):
         print("Number of Labels: ", np.shape(np.unique(labels))[0])
         for a in range(iterations):
             X_train, X_test, y_train, y_test = train_test_split(data, labels, test_size=0.4)
-            
-            
-            model = XGBClassifier(max_depth=6,learning_rate=0.1, n_estimators=250)
+            model = XGBClassifier(max_depth=6,learning_rate=0.1, n_estimators=250,eval_metric='mlogloss')
             model.fit(X_train, y_train)
             y_pred = model.predict(X_test)
             predictions = [round(value) for value in y_pred]

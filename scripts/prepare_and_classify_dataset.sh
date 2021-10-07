@@ -39,7 +39,6 @@ REMOVE_HEADERS(){
 }
 
 GenomeInfo () {
-    touch ../NCBI-Archaea/ArcheaSeq_Genome.info ;
     touch ../NCBI-Archaea/ArcheaSeq_Org.info ;
     for directory in  ../NCBI-Archaea/ncbi_dataset/data/*; do
         if [ -d "${directory}" ]; then
@@ -50,10 +49,10 @@ GenomeInfo () {
                 taxonomy_name=$(cat "$1" | xtract -insd INSDSeq_taxonomy| awk -F '\t' '{print $2}')
                 organism=$(cat "$1" | xtract -insd INSDSeq_organism| awk -F '\t' '{print $2}')
                 echo -e "$dir.fasta\t${organism}\t${taxonomy_name}" >> ../NCBI-Archaea/ArcheaSeq_Org.info; 
-                rm "$1"
             fi
         fi
     done
+    rm "$1"
 }
 
 function SEQ_FEATURES(){
@@ -87,9 +86,11 @@ function SEQ_FEATURES(){
 DATASET_DIR="../NCBI-Archaea/ncbi_dataset"
 rm ../NCBI-Archaea/README.md > /dev/null
 if [ -d "$DATASET_DIR" ]; then rm -Rf $DATASET_DIR; fi
-unzip "../NCBI-Archaea/archaea.zip" -d ../NCBI-Archaea/
+cd "../NCBI-Archaea/" || exit
+unzip "archaea.zip"
 REMOVE_HEADERS
 GenomeInfo "A"
 SEQ_FEATURES REPORTS_SEQ_FEATURES
-python3.6 ../python_src/create_classification_dataset.py
-python3.6 ../python_src/classification.py
+cd "../python_src/" || exit
+python3 create_classification_dataset.py
+python3 classification.py

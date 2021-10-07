@@ -48,7 +48,6 @@ if __name__ == "__main__":
     features_path="../reports/REPORTS_SEQ_FEATURES"
     organism_info_path="../NCBI-Archaea/ArcheaSeq_Org.info"
     taxa_map_path="../NCBI-Archaea/taxa_map.info"
-    
     organism_info=restructure_organism_list(read_to_list(organism_info_path))
     features=process_feature_lst(read_to_list(features_path))
     archea_lst=merge_lists(organism_info,features)
